@@ -1,0 +1,15 @@
+version: '3' # composeファイルのバーション指定
+services:
+  mysql:
+    build: ./db
+    environment:
+      TZ: Asia/Tokyo
+      MYSQL_USER: test
+      MYSQL_ROOT_PASSWORD: password   #コンテナ内のMySQLを起動する際のパスワードを設定
+    volumes:
+      - ./db/volume/data:/var/lib/mysql
+    ports:
+      - "3306:3306"
+
+volumes:
+  db:
