@@ -1,1 +1,3 @@
 db/volume/data/*
+settings/*
+!settings/sample.config
